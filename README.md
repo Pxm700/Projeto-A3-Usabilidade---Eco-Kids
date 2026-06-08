@@ -40,6 +40,3 @@ O EcoKids busca contribuir para a formação de cidadãos mais conscientes, prom
 ## 🎓 Projeto Acadêmico
 
 Projeto desenvolvido para a disciplina de **Usabilidade e Desenvolvimento Web**, com foco na aplicação de conceitos de experiência do usuário, acessibilidade, interatividade e educação ambiental.
-
-**Pedro Henrique**
-
