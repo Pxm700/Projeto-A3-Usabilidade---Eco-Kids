@@ -1,0 +1,212 @@
+/* src/App.css */
+
+/* ── Variáveis de design ─────────────────────────────────── */
+:root {
+  --verde-escuro: #2E7D32;
+  --verde-medio: #4CAF50;
+  --verde-claro: #A5D6A7;
+  --verde-bg: #F1F8E9;
+  --azul: #1565C0;
+  --amarelo: #F9A825;
+  --laranja: #E65100;
+  --branco: #FFFFFF;
+  --cinza-claro: #F5F5F5;
+  --sombra: 0 8px 32px rgba(46,125,50,0.15);
+  --raio: 24px;
+  --raio-btn: 50px;
+  --font-titulo: 'Fredoka One', cursive;
+  --font-corpo: 'Nunito', sans-serif;
+}
+
+/* ── Reset e base ────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-corpo);
+  background: var(--verde-bg);
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Utilitários ─────────────────────────────────────────── */
+.font-titulo { font-family: var(--font-titulo); }
+
+/* ── Tela base ───────────────────────────────────────────── */
+.tela {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Card principal ──────────────────────────────────────── */
+.card-eco {
+  background: var(--branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 680px;
+}
+
+/* ── Botões ──────────────────────────────────────────────── */
+.btn-eco {
+  font-family: var(--font-corpo);
+  font-weight: 800;
+  font-size: 1.1rem;
+  border-radius: var(--raio-btn);
+  padding: 14px 36px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-eco:hover  { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
+.btn-eco:active { transform: translateY(0); }
+
+.btn-verde   { background: var(--verde-medio); color: var(--branco); }
+.btn-amarelo { background: var(--amarelo); color: #333; }
+.btn-cinza   { background: #E0E0E0; color: #555; }
+.btn-azul    { background: var(--azul); color: var(--branco); }
+.btn-outline-verde {
+  background: transparent;
+  border: 2px solid var(--verde-medio);
+  color: var(--verde-medio);
+}
+
+/* ── Badge de estrelas ───────────────────────────────────── */
+.estrela { font-size: 1.8rem; }
+.estrela.apagada { filter: grayscale(1) opacity(0.35); }
+
+/* ── Barra de progresso ──────────────────────────────────── */
+.barra-container {
+  background: #E0E0E0;
+  border-radius: 999px;
+  height: 14px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.barra-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--verde-medio), var(--amarelo));
+  transition: width 0.5s ease;
+}
+
+/* ── Alternativas do quiz ────────────────────────────────── */
+.alternativa-btn {
+  width: 100%;
+  text-align: left;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 2px solid #E0E0E0;
+  background: var(--branco);
+  font-family: var(--font-corpo);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.alternativa-btn:hover:not(:disabled) {
+  border-color: var(--verde-medio);
+  background: var(--verde-bg);
+  transform: translateX(4px);
+}
+
+.alternativa-btn.correta {
+  border-color: #4CAF50;
+  background: #E8F5E9;
+  color: var(--verde-escuro);
+}
+
+.alternativa-btn.errada {
+  border-color: #F44336;
+  background: #FFEBEE;
+  color: #C62828;
+}
+
+.alternativa-btn:disabled { cursor: default; }
+
+/* ── Feedback de resposta ────────────────────────────────── */
+.feedback-box {
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-weight: 700;
+  margin-top: 8px;
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.feedback-box.acerto { background: #E8F5E9; color: #2E7D32; border-left: 4px solid #4CAF50; }
+.feedback-box.erro   { background: #FFEBEE; color: #C62828; border-left: 4px solid #F44336; }
+
+/* ── Card de fase ────────────────────────────────────────── */
+.card-fase {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  background: var(--branco);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  
+}
+
+.card-fase:hover:not(.bloqueada) {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+
+.card-fase.completa { border-color: var(--verde-medio); }
+.card-fase.bloqueada { opacity: 0.55; cursor: not-allowed; }
+
+
+/* ── Confete decorativo ──────────────────────────────────── */
+.confete-bg {
+  background-image:
+    radial-gradient(circle at 10% 20%, #A5D6A7 0 6px, transparent 6px),
+    radial-gradient(circle at 90% 10%, #FFE082 0 5px, transparent 5px),
+    radial-gradient(circle at 50% 90%, #80DEEA 0 7px, transparent 7px),
+    radial-gradient(circle at 80% 70%, #CE93D8 0 5px, transparent 5px);
+  background-size: 200px 200px;
+}
+
+/* ── Responsividade ──────────────────────────────────────── */
+@media (max-width: 576px) {
+  .card-eco { padding: 24px 16px; }
+  .personagem { font-size: 4rem; }
+  .btn-eco { font-size: 0.95rem; padding: 12px 24px; }
+}
