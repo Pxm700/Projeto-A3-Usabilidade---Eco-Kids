@@ -1,128 +1,45 @@
-# 🌍 EcoKids: Missão Reciclagem
+# 🌱 EcoKids – Missão Reciclagem
 
-Jogo web educativo infantil sobre sustentabilidade, desenvolvido com **React** e **Bootstrap**.
+## 📖 Sobre o Projeto
 
-Alinhado à **ODS 12 – Consumo e Produção Responsáveis** (Nações Unidas).
+O **EcoKids – Missão Reciclagem** é um jogo web educativo desenvolvido com o objetivo de conscientizar crianças e jovens sobre a importância da reciclagem e da preservação do meio ambiente.
 
----
+Por meio de uma experiência interativa e divertida, os jogadores aprendem a identificar corretamente diferentes tipos de resíduos e a destiná-los às lixeiras adequadas, incentivando hábitos sustentáveis e a responsabilidade ambiental.
 
-## 📋 Requisitos do Projeto Atendidos
+## 🎯 Objetivos
 
-### ✅ Heurísticas de Nielsen aplicadas (5+)
-| # | Heurística | Onde aparece |
-|---|-----------|-------------|
-| 1 | **Visibilidade do status do sistema** | Timer, barra de progresso, pontuação em tempo real, title da aba |
-| 2 | **Controle e liberdade do usuário** | Botão "Voltar" em todas as telas; confirmação antes de sair do quiz |
-| 3 | **Prevenção de erros** | Botões desabilitados após escolha; confirmação para sair |
-| 4 | **Reconhecimento em vez de memorização** | Fases com ícones e descrição visíveis; letras A/B/C/D nas alternativas |
-| 5 | **Estética e design minimalista** | Interface limpa, cores temáticas, sem informação desnecessária |
-| 6 | **Ajuda ao usuário a reconhecer e se recuperar de erros** | Feedback imediato com explicação da resposta correta |
+* Promover a educação ambiental de forma lúdica.
+* Ensinar conceitos de reciclagem e coleta seletiva.
+* Incentivar práticas sustentáveis no dia a dia.
+* Desenvolver a conscientização sobre o descarte correto de resíduos.
 
-### ✅ Componentes React (5 componentes)
-- `TelaInicial` — Apresentação com personagem e botão iniciar
-- `TelaFases` — Seleção de fase com progresso
-- `TelaQuiz` — Perguntas interativas com timer
-- `TelaPontuacao` — Resultado da fase com estrelas
-- `TelaFinal` — Conclusão com medalha e pontuação total
+## 🚀 Funcionalidades
 
-### ✅ Funcionalidades React
-- `useState` — Estado do jogo, respostas, timer, acertos
-- `useEffect` — Timer regressivo, carregamento de dica, title dinâmico
-- `useCallback` — Handler otimizado de respostas
-- Props entre componentes
-- Renderização de listas (alternativas, fases, confetes)
-- Eventos: cliques, navegação entre telas
+* Interface intuitiva e amigável.
+* Sistema de pontuação.
+* Desafios educativos sobre reciclagem.
+* Feedback imediato para auxiliar o aprendizado.
+* Experiência interativa voltada ao público infantil e juvenil.
 
-### ✅ Requisição HTTP
-- Uso de **axios** para simular busca de dica sobre ODS (TelaFases)
+## 🛠️ Tecnologias Utilizadas
 
-### ✅ Bootstrap
-- Grid responsivo (`col-6 col-md-3`)
-- Classes utilitárias de espaçamento e flexbox
-- Spinner de carregamento
+* HTML5
+* CSS3
+* JavaScript
+* React
+* Vite
 
-### ✅ ODS
-- **ODS 12 – Consumo e Produção Responsáveis**
-- 4 fases: Reciclagem, Água, Energia, Lixo Eletrônico
+## 👥 Público-Alvo
 
----
+O projeto foi desenvolvido para crianças e jovens em fase de aprendizagem, utilizando elementos visuais e mecânicas simples para tornar o processo educativo mais envolvente.
 
-## 🚀 Como Rodar
+## 🌎 Impacto Esperado
 
-### Pré-requisitos
-- [Node.js](https://nodejs.org/) v16 ou superior
-- npm (já vem com o Node)
+O EcoKids busca contribuir para a formação de cidadãos mais conscientes, promovendo a educação ambiental e incentivando atitudes sustentáveis por meio da tecnologia e da gamificação.
 
-### Instalação
+## 🎓 Projeto Acadêmico
 
-```bash
-# 1. Acesse a pasta do projeto
-cd ecokids-missao-reciclagem
+Projeto desenvolvido para a disciplina de **Usabilidade e Desenvolvimento Web**, com foco na aplicação de conceitos de experiência do usuário, acessibilidade, interatividade e educação ambiental.
 
-# 2. Instale as dependências
-npm install
+**Pedro Henrique**
 
-# 3. Rode o projeto em modo de desenvolvimento
-npm start
-```
-
-O navegador abrirá automaticamente em `http://localhost:3000`
-
----
-
-## 🎮 Como Jogar
-
-1. **Tela Inicial** — Clique em "Começar Missão!"
-2. **Tela de Fases** — Escolha uma das 4 fases
-3. **Quiz** — Responda 4 perguntas em até 20 segundos cada
-4. **Pontuação** — Veja seu resultado com estrelas
-5. **Tela Final** — Complete todas as fases e ganhe uma medalha!
-
-### Sistema de pontuação
-- ✅ Acerto: **+25 pontos**
-- ⭐ 3 estrelas: 100% de acertos
-- ⭐⭐ 2 estrelas: 75%+ de acertos
-- ⭐ 1 estrela: 50%+ de acertos
-
----
-
-## 📁 Estrutura do Projeto
-
-```
-ecokids-missao-reciclagem/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── TelaInicial.jsx      ← Tela de boas-vindas
-│   │   ├── TelaFases.jsx        ← Seleção de fase + requisição HTTP
-│   │   ├── TelaQuiz.jsx         ← Quiz com timer e feedback
-│   │   ├── TelaPontuacao.jsx    ← Resultado da fase
-│   │   └── TelaFinal.jsx        ← Conclusão do jogo
-│   ├── data/
-│   │   └── questions.js         ← Banco de perguntas (16 perguntas)
-│   ├── App.js                   ← Roteamento e estado global
-│   ├── App.css                  ← Estilos globais com CSS variables
-│   └── index.js                 ← Entry point
-└── package.json
-```
-
----
-
-## 👥 Integrantes
-
-| Nome | RA | Curso |
-|------|----|-------|
-| Ana Carolina Saire Lucas | 824127342 | Engenharia de Software |
-| Ariane Silvestre Maira | 824129529 | Engenharia de Software |
-| Clara Eduarda Ferreira Santos | 825154944 | Engenharia de Software |
-| Pedro Henrique Machado Freitas | 824147307 | Engenharia de Software |
-| Luiz Gustavo Dias Machado | 825223688 | Engenharia de Software |
-
----
-
-## 🌍 ODS 12 – Consumo e Produção Responsáveis
-
-Este projeto contribui para a formação de crianças mais conscientes ambientalmente,
-ensinando de forma lúdica sobre reciclagem, economia de água, energia limpa e
-descarte correto de lixo eletrônico.
